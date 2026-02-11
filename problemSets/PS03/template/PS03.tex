@@ -86,7 +86,7 @@ The data for this problem set come from the	Canadian Election Study (\href{https
 \begin{verbatim}
 ces2015 <- ces2015 |> filter(discard == "Good quality")
 \end{verbatim}
-\item Recode potential turnout as a binary variable using \texttt{voted\_for}. Consider respondents who gave a valid party as having voted, while “none/spoiled ballot” as not having voted. Treat “Don’t know” (98) and “Refused” (99) as missing.
+\item Filter the dataset to those participants that answered the question about voting for the past election using \texttt{p\_voted}. Consider respondents who gave a "Yes" answer as having voted, while “No” as not having voted. Treat “Don’t know” and “Refused” as missing.
 \item Create an age variable and group into categories (e.g., $<$30, 30-44, 45-64, 65+). Year of birth is in age (four‑digit year).
 \end{enumerate}
 
@@ -95,7 +95,7 @@ ces2015 <- ces2015 |> filter(discard == "Good quality")
 \begin{enumerate}
 	\item Plot turnout rate by age group.
 	\item Create a density plot of ideology by party, restricting your sample to respondents with non‑missing left–right self‑placement (0–10 scale) and those that intended to vote for a main party (e.g., Liberal, Conservative, NDP, Bloc in Quebec, and Green).
-	\item Produce bar charts of turnout by income (\texttt{income\_full}), faceted by province.
+	\item Produce histogram counts of turnout by income (\texttt{income\_full}), faceted by province.
 	\item Create your own reusable custom theme. Apply your theme to one of the previous plots and add:
 	\begin{enumerate}
 		\item An improved title summarizing the main substantive takeaway.
